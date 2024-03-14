@@ -111,13 +111,111 @@ $ [a_(n+1),b_(n+1)] subset [a_n,b_n] space (n in NN) $
 
 Ekkor
 
-$ sect.big (n in NN)[a_n,b_n] eq.not emptyset $
+$ sect.big_(n in NN)[a_n,b_n] eq.not emptyset $
+
+=== Bizonyítás (teljességi axiómát alkalmazva)
+
+Legyen
+
+$ A colon.eq {a_n bar n in NN} "és" B colon.eq {b_n bar n in NN} $
+
+Először belátjuk, hogy
+
+$ a_n lt.eq b_m "tetszőleges" n,m in NN "esetén" $
+
+Valóban,
+
++ ha $n lt.eq m$, akkor $a_n lt.eq a_m lt.eq b_m$
++ ha $m lt n$, akkor $a_n lt.eq b_n lt.eq b_m$
+
+Mivel $A eq.not emptyset "és" B eq.not emptyset$, ezért "$a_n lt.eq b_m "tetszőleges" n,m in NN "esetén"$" miatt a teljességi axióma feltételei teljesülnek, így
+
+$ exists epsilon in RR: a_n lt.eq epsilon lt.eq b_m space space forall n,m in RR "indexre" $
+
+Ha $n eq m$, akkor azt kapjuk, hogy
+
+$ a_n lt.eq epsilon lt.eq b_n space arrow.double.l.r.long space epsilon in [a_n,b_n] forall n in NN "esetén" $
+
+és azt jelenti, hogy
+
+$ epsilon in sect.big_(n in NN)[a_n,b_n] eq.not emptyset $
+
+#pagebreak()
 
 == Konvergens sorozatok határértékének egyértelműsége
 
+(\*) #h(weak: true,20pt) $exists A in RR: forall epsilon gt 0: exists n_0 in NN: forall n gt n_0 "indexre" |a_n - A| lt epsilon$
+
+Ha az $(a_n) : NN → RR$ sorozat konvergens, akkor a konvergencia definíciójában szereplő $A$ szám egyértelműen létezik.
+
+=== Bizonyítás
+
+Tegyük fel, hogy az $(a_n)$ sorozatra (\*) az $A_1$ és az $A_2$ számokkal is teljesül.
+Indirekt módon tegyük fel azt is, hogy $A_1 eq A_2$.
+
+Ekkor $forall epsilon gt 0$ számhoz
+
+$ exists n_1 in NN: forall n gt n_1 : abs(a_n − A_1) lt epsilon $
+$ exists n_2 in NN: forall n gt n_2 : abs(a_n − A_2) lt epsilon $
+
+Válasszuk itt speciálisan az
+
+$ epsilon colon.eq abs(A_1 - A_2)/2 $
+
+(pozitív) számot. Az ennek megfelelő $n_1, n_2$ indexeket figyelembe véve legyen
+
+$ n_0 colon.eq max{n_1,n_2} $
+
+Ha $n in NN "és" n gt n_0$, akkor nyilván $n gt n_1 "és" n gt n_2$ is fennáll, következésképpen
+
+$ abs(A_1 - A_2) eq abs((A_1 - a_n) + (a_n - A_2))lt.eq abs(a_n - A_1) + abs(a_n - A_2) \ lt epsilon + epsilon eq 2epsilon eq abs(A_1 - A_2) $
+
+amiből (a nyilván nem igaz) $abs(A_1 − A_2) lt abs(A_1 - A_2)$
+következne. Ezért csak $A_1 eq A_2$ lehet.
+
+#pagebreak()
+
 == A konvergencia és a korlátosság kapcsolata
 
+Ha az $(a_n)$ sorozat konvergens, akkor korlátos is.
+
+=== Bizonyítás
+
+Tegyük fel, hogy $(a_n)$ konvergens és $lim(a_n) eq A in RR$. Válasszuk a konvergencia definíciója szerinti jelöléssel $epsilon$-t 1-nek. Ehhez a hibakorláthoz
+
+$ exists n_0 in NN, forall n gt n_0: abs(a_n - A) lt 1 $
+
+Így
+
+$ abs(a_n) eq abs((a_n - A) + A) lt.eq abs(a_n - A) + abs(A) lt 1 + abs(A) space space space (n gt n_0) $
+
+Ha $n lt.eq n_0$, akkor
+
+$ abs(a_n) lt.eq max{abs(a_0),abs(a_1),dots,abs(a_n_0)} $
+
+Legyen
+
+$ K colon.eq max{abs(a_0),abs(a_1),dots,abs(a_n_0), 1 + abs(A)} $
+
+Ekkor $abs(a_n) lt.eq K$ minden $n in NN$ indexre,és ez azt jelenti, hogy $(a_n)$ sorozat korlátos.
+
 == Monoton részsorozatok létezésére vonatkozó tétel
+
+Minden $a eq (a_n)$ valós sorozatnak létezik monoton részsorozata, azaz létezik olyan $v eq (v_n)$ indexsorozat, amellyel $a compose v$ monoton növekvő vagy monoton csökkenő.
+
+=== Bizonyítás
+
+Az állítás igazolásához bevezetjük egy sorozat csúcsának a fogalmát: Azt mondjuk, hogy $a_n_0$ az $(a_n)$ sorozat csúcsa (vagy csúcseleme), ha
+
+$ forall n gt.eq n_0 "indexre" a_n lt.eq a_n_0 $
+
+#pagebreak()
+
+Két eset lehetséges:
+
++ A sorozatnak végtelen sok csúcsa van. Ez azt jelenti, hogy $ exists v_0 in NN: a_v_0 "csúcselem, azaz " forall n gt.eq v_0: a_n lt.eq a_v_0 $ $ exists v_1 gt v_0: a_v_1 "csúcselem, azaz " forall n gt.eq v_1: a_n lt.eq a_v_1 (lt.eq a_v_0) $ Ezek a lépések folytathatók, mert végtelen sok csúcselem van. Így olyan $v_0 lt v_1 lt v_2 lt dots$ indexsorozatot kapunk, amelyre $ a_v_0 gt.eq a_v_1 gt.eq a_v_2 gt.eq dots"," $ ezért a csúcsok $(a_v_n)$ sorozata $(a_n)$-nek egy monoton csökkenő részsorozata.
+
++ A sorozatnak legfejlebb véges sok csúcsa van. Ez azt jelenti, hogy $ exists N in NN, forall n lt.eq N "esetén" a_n "már nem csúcs" $ Mivel $a_N$ nem csúcselem, ezért $ exists v_0 gt N: a_v_0 gt a_N $ Azonban $a_v_0$ sem csúcselem, ezért $ exists v_1 gt v_0: a_v_1 gt a_v_1 (gt a_N) $ Az eljárást folytatva most olyan $v_0 lt v_1 lt v_2 lt dots$ indexsorozatot kapunk, amelyre $ a_v_0 lt a_v_1 lt a_v_2 lt dots $ Ebben az esetben tehát $(a_v_0)$ sorozat $(a_n)$-nek egy (szigorúan) monoton növekvő részsorozata.
 
 == A sorozatokra vonatkozó közrefogási elv
 
