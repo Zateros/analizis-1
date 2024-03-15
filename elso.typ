@@ -219,11 +219,92 @@ Két eset lehetséges:
 
 == A sorozatokra vonatkozó közrefogási elv
 
+#set enum(numbering: "1.")
+
 == A határérték és a rendezés kapcsolata
+
+Tegyük fel, hogy az $(a_n)$ és a $(b_n)$ sorozatnak van határértéke és $ lim(a_n) = A in macron(RR) , lim(b_n) = B in macron(RR) $
+
+Ekkor:
+
+1. $ A lt B arrow.r.double.long exists N in NN, forall n gt N : a_n lt b_n $
+2. $ exists N in NN, forall n gt N : a_n lt.eq b_n arrow.r.long.double A lt.eq B$
+
+=== Bizonyítás
+
+1. Azt már tudjuk, hogy bármely két különböző $macron(RR)$-beli elem szétválasztható diszjunkt környezetekkel:
+
+$ forall A,B in macron(RR), A != B"-hez" exists r_1,r_2 lt 0, K_"r1"(A) sect K_"r2"(B) = emptyset dot $
+
+Világos, hogy ha $A < B$, akkor $forall x in K_"r1" (A), forall y in K_"r2" (B): x lt y$
+Mivel $lim(a_n) = A "és" lim(b_n) = B$ , így a definíció értelmében
+
+$ exists n_1 in NN, forall n > n_1 : a_n in K_"r1" (A) $
+$ exists n_2 in NN, forall n > n_2 : b_n in K_"r2" (B) $
+Legyen $N := max{n_1,n_2}.$ Ekkor $forall n lt N$ esetén
+$ a_n in K_"r1" (A) "és" b_n in K_"r2" (B) arrow.r.long.double a_n lt b_n $
+
+2. Indirekt módon bizonyítjuk. Tegyük fel, hogy $A > B$. Ekkor a már igazolt 1. állítás szerint $exists N ∈ NN$, hogy minden $n gt N$ indexre $b_n lt a_n$, ami ellentmond a feltételnek.
 
 == Műveletek nullsorozatokkal
 
+Tegyük fel, hogy $lim(a_n) = 0 "és" lim(b_n) = 0$
+
+Ekkor
+
+1. $(a_n + b_n)$ is nullsorozat,
+2. ha $(c_n)$ korlátos sorozat, akkor $(c_n dot.op a_n)$ is nullsorozat
+3. $(a_n dot.op b_n)$ is nullsorozat
+
+=== Bizonyítás
+
+1. Mivel $lim(a_n) = lim(b_n) = 0, "ezért" forall epsilon gt 0"-hoz"$
+$ exists n_1 in NN, forall n gt n_1 : abs(a_n) lt epsilon/2 $
+
+$ exists n_2 in NN, forall n gt n_2 : abs(b_n) lt epsilon/2 $
+
+Legyen $n_0 := max{n_1,n_2}$. Ekkor $forall n gt n_0$ indexre
+
+$ abs(a_n + b_n) lt.eq abs(a_n) + abs(b_n) lt epsilon/2 + epsilon/2 eq epsilon, $
+
+és ez azt jelenti, hogy $lim(a_n + b_n) = 0$, azaz $(a_n + b_n)$ valóban nullsorozat.
+
+2. A $(c_n)$ sorozat korlátos, ezért
+
+$ exists K gt 0 : abs(c_n) lt K (n in NN) $
+
+Mivel $(a_n)$ nullsorozat, ezért
+
+$ forall epsilon gt 0"-hoz" exists n_0 in NN,  forall n gt n_0 : abs(a_n) lt epsilon/K, $
+
+következésképpen minden $ n gt n_0$ indexre
+
+$ abs(c_n dot.op a_n) eq abs(c_n) dot.op abs(a_n) lt K dot.op epsilon/K eq epsilon, $
+
+azaz $lim(c_n dot.op a_n) eq 0.$
+
+3. Mivel minden konvergens sorozat korlátos, ezért a $lim(b_n) = 0$ feltételből következik, hogy $(b_n)$ korlátos sorozat. Az állítás tehát a 2. állítás közvetlen következménye.
+
 == Konvergens sorozatok szorzatára vonatkozó tétel
+
+Tegyük fel, hogy az $(a_n)$ és a $(b_n)$ sorozat konvergens. Legyen
+
+$ lim(a_n) = A in RR "és" lim(b_n) = B in RR $
+
+Ekkor
+
+$(a_n dot.op b_n)$ is konvergens és $lim(a_n dot.op b_n) = lim(a_n) dot.op lim(b_n) = A dot.op B$
+
+#set math.cases(reverse: true)
+=== Bizonyítás
+
+(\*) #h(weak: true,20pt)$(x_n)$ konvergens, és $alpha in RR$ a határértéke $arrow.r.l.double.long (x_n - alpha)$ nullsorozat
+
+(\*) miatt elég megmutatni, hogy $(a_n b_n - A B)$ nullsorozat. Ez a következő átalakítással igazolható:
+
+$ a_n b_n - A B = a_n b_n - A b_n + A b_n - A B = b_n dot.op (a_n - A) + A dot.op (b_n - B) $
+
+A fenti gondolatmenetben a $(b_n)$ sorozat azért korlátos, mert konvergens.
 
 == Konvergens sorozatok hányadosára vonatkozó tétel
 
