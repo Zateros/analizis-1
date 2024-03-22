@@ -87,7 +87,7 @@ Ez pedig pontosan azt jelenti, hogy $epsilon$ a $H$ halmaz legkisebb felső korl
 
 == Az arkhimédészi tulajdonság
 
-Minden $a gt 0$ és minden $b$ valós számhoz létezik olyan $n$ természetes szám, hogy $b gt n dot a$, azaz
+Minden $a gt 0$ és minden $b$ valós számhoz létezik olyan $n$ természetes szám, hogy $b lt n dot a$, azaz
 
 $ forall a gt 0 "és" forall b in RR: exists n in NN: b gt n dot a $
 
