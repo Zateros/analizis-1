@@ -5,7 +5,7 @@
 )
 
 #set document(
-  author: "Tóth Zalán & Krasznai Dániel",
+  author: "Krasznai Dániel & Tóth Zalán",
   title: "Első Analízis I. ZH kérdései"
 )
 
