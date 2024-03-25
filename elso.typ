@@ -2,6 +2,8 @@
 
 #set page(
   paper: "a4",
+  numbering: "1.",
+  margin: (x: 40pt, y: 40pt)
 )
 
 #set document(
@@ -20,7 +22,7 @@
 
 #show heading.where(level: 2): it => block(
   fill: colorS,
-  inset: 5pt,
+  inset: 10pt,
   radius: 4pt,
 )[#it]
 
@@ -247,7 +249,7 @@ Ekkor a $(b_n)$ sorozatnak is van határértéke és $lim(b_n) eq A$
 
 === Bizonyítás
 Három eset lehetséges:\
-1. eset: $A in RR$ Legyen epsilon gt 0  tetszőleges valós szám. $lim(a_n) = lim(c_n) = A$ azt jelenti, hogy $(a_n) "és" (c_n)$ azonos A határértékkel rendelkező konvergens sorozatok. A konvergencia definíciója szerint tehát
+*1. eset:* $A in RR$ Legyen epsilon gt 0  tetszőleges valós szám. $lim(a_n) = lim(c_n) = A$ azt jelenti, hogy $(a_n) "és" (c_n)$ azonos A határértékkel rendelkező konvergens sorozatok. A konvergencia definíciója szerint tehát
 
 $ exists n_1 in NN, forall n gt n_1 : A - epsilon lt a_n lt A + epsilon $
 $ exists n_2 in NN, forall n gt n_2 : A - epsilon lt c_n lt A + epsilon $
@@ -262,7 +264,7 @@ $ abs(b_n - A) lt epsilon, space "ha" n gt n_0 $
 
 azazo a $(b_0)$ sorozat konvergens, tehát van határértéke, és $lim(b_n) = A$
 
-2. eset: $A eq +infinity$ Tegyük fel, hogy $P gt 0$ tetszőleges valós szám. A $lim(a_n) eq +infinity$ értelmezése szerint
+*2. eset:* $A eq +infinity$ Tegyük fel, hogy $P gt 0$ tetszőleges valós szám. A $lim(a_n) eq +infinity$ értelmezése szerint
 
 $ exists n_1 in NN, forall n gt n_1 : a_n gt P $
 
@@ -272,9 +274,9 @@ $ P lt a_n lt.eq b_n $
 
 és ez azt jelenti hogy $lim(b_n) eq +infinity$
 
-3. eset: $A eq -infinity$ Tegyük fel, hogy $P lt 0$ tetszőleges valós szám. A $lim(c_n) eq -infinity$ értelemzése szerint
+*3. eset:* $A eq -infinity$ Tegyük fel, hogy $P lt 0$ tetszőleges valós szám. A $lim(c_n) eq -infinity$ értelemzése szerint
 
-$ exists n_1 in NN, forall n gt n_1 : c_n lt P $.
+$ exists n_1 in NN, forall n gt n_1 : c_n lt P $
 
 Legyen n_0 := max{N,n_1}, akkor $forall n gt n_0$ indexre
 
@@ -295,7 +297,7 @@ Ekkor:
 
 === Bizonyítás
 
-1. Azt már tudjuk, hogy bármely két különböző $macron(RR)$-beli elem szétválasztható diszjunkt környezetekkel:
+*1.* Azt már tudjuk, hogy bármely két különböző $macron(RR)$-beli elem szétválasztható diszjunkt környezetekkel:
 
 $ forall A,B in macron(RR), A != B"-hez" exists r_1,r_2 lt 0, K_"r1"(A) sect K_"r2"(B) = emptyset dot $
 
@@ -307,7 +309,7 @@ $ exists n_2 in NN, forall n > n_2 : b_n in K_"r2" (B) $
 Legyen $N := max{n_1,n_2}.$ Ekkor $forall n lt N$ esetén
 $ a_n in K_"r1" (A) "és" b_n in K_"r2" (B) arrow.r.long.double a_n lt b_n $
 
-2. Indirekt módon bizonyítjuk. Tegyük fel, hogy $A > B$. Ekkor a már igazolt 1. állítás szerint $exists N ∈ NN$, hogy minden $n gt N$ indexre $b_n lt a_n$, ami ellentmond a feltételnek.
+*2.* Indirekt módon bizonyítjuk. Tegyük fel, hogy $A > B$. Ekkor a már igazolt 1. állítás szerint $exists N ∈ NN$, hogy minden $n gt N$ indexre $b_n lt a_n$, ami ellentmond a feltételnek.
 
 #pagebreak()
 
@@ -317,13 +319,13 @@ Tegyük fel, hogy $lim(a_n) = 0 "és" lim(b_n) = 0$
 
 Ekkor
 
-1. $(a_n + b_n)$ is nullsorozat,
-2. ha $(c_n)$ korlátos sorozat, akkor $(c_n dot.op a_n)$ is nullsorozat
-3. $(a_n dot.op b_n)$ is nullsorozat
++ $(a_n + b_n)$ is nullsorozat,
++ ha $(c_n)$ korlátos sorozat, akkor $(c_n dot.op a_n)$ is nullsorozat
++ $(a_n dot.op b_n)$ is nullsorozat
 
 === Bizonyítás
 
-1. Mivel $lim(a_n) = lim(b_n) = 0, "ezért" forall epsilon gt 0"-hoz"$
+*1.* Mivel $lim(a_n) = lim(b_n) = 0, "ezért" forall epsilon gt 0"-hoz"$
 $ exists n_1 in NN, forall n gt n_1 : abs(a_n) lt epsilon/2 $
 
 $ exists n_2 in NN, forall n gt n_2 : abs(b_n) lt epsilon/2 $
@@ -334,7 +336,7 @@ $ abs(a_n + b_n) lt.eq abs(a_n) + abs(b_n) lt epsilon/2 + epsilon/2 eq epsilon, 
 
 és ez azt jelenti, hogy $lim(a_n + b_n) = 0$, azaz $(a_n + b_n)$ valóban nullsorozat.
 
-2. A $(c_n)$ sorozat korlátos, ezért
+*2.* A $(c_n)$ sorozat korlátos, ezért
 
 $ exists K gt 0 : abs(c_n) lt K (n in NN) $
 
@@ -348,7 +350,7 @@ $ abs(c_n dot.op a_n) eq abs(c_n) dot.op abs(a_n) lt K dot.op epsilon/K eq epsil
 
 azaz $lim(c_n dot.op a_n) eq 0.$
 
-3. Mivel minden konvergens sorozat korlátos, ezért a $lim(b_n) = 0$ feltételből következik, hogy $(b_n)$ korlátos sorozat. Az állítás tehát a 2. állítás közvetlen következménye.
+*3.* Mivel minden konvergens sorozat korlátos, ezért a $lim(b_n) = 0$ feltételből következik, hogy $(b_n)$ korlátos sorozat. Az állítás tehát a 2. állítás közvetlen következménye.
 
 #pagebreak()
 
