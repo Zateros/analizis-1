@@ -1,13 +1,11 @@
 #let colorS = color.rgb("#B4D3B4")
 
-
-
 #set page(
   paper: "a4",
 )
 
 #set document(
-  author: "Zalán",
+  author: "Tóth Zalán & Krasznai Dániel",
   title: "Első Analízis I. ZH kérdései"
 )
 
@@ -161,7 +159,7 @@ Ha az $(a_n) : NN → RR$ sorozat konvergens, akkor a konvergencia definíciój�
 === Bizonyítás
 
 Tegyük fel, hogy az $(a_n)$ sorozatra (\*) az $A_1$ és az $A_2$ számokkal is teljesül.
-Indirekt módon tegyük fel azt is, hogy $A_1 eq A_2$.
+Indirekt módon tegyük fel azt is, hogy $A_1 eq.not A_2$.
 
 Ekkor $forall epsilon gt 0$ számhoz
 
