@@ -226,7 +226,7 @@ Két eset lehetséges:
 
 + A sorozatnak végtelen sok csúcsa van. Ez azt jelenti, hogy $ exists v_0 in NN: a_v_0 "csúcselem, azaz " forall n gt.eq v_0: a_n lt.eq a_v_0 $ $ exists v_1 gt v_0: a_v_1 "csúcselem, azaz " forall n gt.eq v_1: a_n lt.eq a_v_1 (lt.eq a_v_0) $ Ezek a lépések folytathatók, mert végtelen sok csúcselem van. Így olyan $v_0 lt v_1 lt v_2 lt dots$ indexsorozatot kapunk, amelyre $ a_v_0 gt.eq a_v_1 gt.eq a_v_2 gt.eq dots"," $ ezért a csúcsok $(a_v_n)$ sorozata $(a_n)$-nek egy monoton csökkenő részsorozata.
 
-+ A sorozatnak legfejlebb véges sok csúcsa van. Ez azt jelenti, hogy $ exists N in NN, forall n lt.eq N "esetén" a_n "már nem csúcs" $ Mivel $a_N$ nem csúcselem, ezért $ exists v_0 gt N: a_v_0 gt a_N $ Azonban $a_v_0$ sem csúcselem, ezért $ exists v_1 gt v_0: a_v_1 gt a_v_1 (gt a_N) $ Az eljárást folytatva most olyan $v_0 lt v_1 lt v_2 lt dots$ indexsorozatot kapunk, amelyre $ a_v_0 lt a_v_1 lt a_v_2 lt dots $ Ebben az esetben tehát $(a_v_0)$ sorozat $(a_n)$-nek egy (szigorúan) monoton növekvő részsorozata.
++ A sorozatnak legfejlebb véges sok csúcsa van. Ez azt jelenti, hogy $ exists N in NN, forall n gt.eq N "esetén" a_n "már nem csúcs" $ Mivel $a_N$ nem csúcselem, ezért $ exists v_0 gt N: a_v_0 gt a_N $ Azonban $a_v_0$ sem csúcselem, ezért $ exists v_1 gt v_0: a_v_1 gt a_v_1 (gt a_N) $ Az eljárást folytatva most olyan $v_0 lt v_1 lt v_2 lt dots$ indexsorozatot kapunk, amelyre $ a_v_0 lt a_v_1 lt a_v_2 lt dots $ Ebben az esetben tehát $(a_v_0)$ sorozat $(a_n)$-nek egy (szigorúan) monoton növekvő részsorozata.
 
 #pagebreak()
 
