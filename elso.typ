@@ -254,7 +254,7 @@ Három eset lehetséges:\
 $ exists n_1 in NN, forall n gt n_1 : A - epsilon lt a_n lt A + epsilon $
 $ exists n_2 in NN, forall n gt n_2 : A - epsilon lt c_n lt A + epsilon $
 
-Legyen $n_0 := max{N, n_1, n_2}.$ Ekkor $forall n gt n_0$ indexre
+Legyen $n_0 colon.eq max{N, n_1, n_2}.$ Ekkor $forall n gt n_0$ indexre
 
 $ A - epsilon lt a_n lt.eq b_n lt.eq c_n lt A + epsilon $
 
@@ -262,13 +262,13 @@ Ez az jelenti, hogy
 
 $ abs(b_n - A) lt epsilon, space "ha" n gt n_0 $
 
-azazo a $(b_0)$ sorozat konvergens, tehát van határértéke, és $lim(b_n) = A$
+azaz a $(b_n)$ sorozat konvergens, tehát van határértéke, és $lim(b_n) = A$
 
 *2. eset:* $A eq +infinity$ Tegyük fel, hogy $P gt 0$ tetszőleges valós szám. A $lim(a_n) eq +infinity$ értelmezése szerint
 
 $ exists n_1 in NN, forall n gt n_1 : a_n gt P $
 
-Legyen $n_0 := max{N, n_1}.$ Ekkor $forall n gt n_0$ indexre
+Legyen $n_0 colon.eq max{N, n_1}.$ Ekkor $forall n gt n_0$ indexre
 
 $ P lt a_n lt.eq b_n $
 
@@ -278,7 +278,7 @@ $ P lt a_n lt.eq b_n $
 
 $ exists n_1 in NN, forall n gt n_1 : c_n lt P $
 
-Legyen n_0 := max{N,n_1}, akkor $forall n gt n_0$ indexre
+Legyen $n_0 colon.eq max{N,n_1}$, akkor $forall n gt n_0$ indexre
 
 $ P gt c_n gt.eq b_n $
 
@@ -299,14 +299,14 @@ Ekkor:
 
 *1.* Azt már tudjuk, hogy bármely két különböző $macron(RR)$-beli elem szétválasztható diszjunkt környezetekkel:
 
-$ forall A,B in macron(RR), A != B"-hez" exists r_1,r_2 lt 0, K_"r1"(A) sect K_"r2"(B) = emptyset dot $
+$ forall A,B in macron(RR), A != B"-hez" exists r_1,r_2 lt 0, K_"r1" (A) sect K_"r2" (B) = emptyset dot $
 
 Világos, hogy ha $A < B$, akkor $forall x in K_"r1" (A), forall y in K_"r2" (B): x lt y$
 Mivel $lim(a_n) = A "és" lim(b_n) = B$ , így a definíció értelmében
 
 $ exists n_1 in NN, forall n > n_1 : a_n in K_"r1" (A) $
 $ exists n_2 in NN, forall n > n_2 : b_n in K_"r2" (B) $
-Legyen $N := max{n_1,n_2}.$ Ekkor $forall n lt N$ esetén
+Legyen $N colon.eq max{n_1,n_2}.$ Ekkor $forall n lt N$ esetén
 $ a_n in K_"r1" (A) "és" b_n in K_"r2" (B) arrow.r.long.double a_n lt b_n $
 
 *2.* Indirekt módon bizonyítjuk. Tegyük fel, hogy $A > B$. Ekkor a már igazolt 1. állítás szerint $exists N ∈ NN$, hogy minden $n gt N$ indexre $b_n lt a_n$, ami ellentmond a feltételnek.
@@ -330,7 +330,7 @@ $ exists n_1 in NN, forall n gt n_1 : abs(a_n) lt epsilon/2 $
 
 $ exists n_2 in NN, forall n gt n_2 : abs(b_n) lt epsilon/2 $
 
-Legyen $n_0 := max{n_1,n_2}$. Ekkor $forall n gt n_0$ indexre
+Legyen $n_0 colon.eq max{n_1,n_2}$. Ekkor $forall n gt n_0$ indexre
 
 $ abs(a_n + b_n) lt.eq abs(a_n) + abs(b_n) lt epsilon/2 + epsilon/2 eq epsilon, $
 
@@ -388,10 +388,10 @@ $ (a_n/b_n) "is konvergens, és" lim(a_n/b_n) = lim(a_n)/lim(b_n) = A/B $
 === Bizonyítás
 (\*) $(x_n)$ konvergens, és $alpha in RR$ a határértéke $arrow.r.l.long.double (x_n - alpha)$ nullsorozat.
 === Segédtélel:
-Ha $b_n != 0 (n in NN)$ és $(b_n)$ konvergens, továbbá $B := lim(b_n) != 0$, akkor az
+Ha $b_n != 0 (n in NN)$ és $(b_n)$ konvergens, továbbá $B colon.eq lim(b_n) != 0$, akkor az
 $ (1/b_n) $
 reciprok-sorozat korlátos.\
-Ennek bizonyításához legyen $epsilon := abs(B)/2$. Ekkor egy alkalmas $n_0 in NN$ küszöbindex mellett
+Ennek bizonyításához legyen $epsilon colon.eq abs(B)/2$. Ekkor egy alkalmas $n_0 in NN$ küszöbindex mellett
 $ abs(b_n - B) lt epsilon eq abs(B)/2 space space forall n gt n_0 "indexre." $
 Így minden $n gt n_0$ esetén
 $ abs(b_n) gt.eq abs(B) - abs(b_n - B) gt abs(B) - abs(B)/2 = abs(B)/2 $
@@ -424,7 +424,7 @@ $ lim(a_n) = sup{a_n | n in NN} $
 === Bizonyítás
 
 Tegyük fel, hogy az $(a_n)$ sorozat monoton növekvő és felülről korlátos. Legyen
-$ A := sup{a_n | n in NN} in RR. $
+$ A colon.eq sup{a_n | n in NN} in RR. $
 Ez azt jelenti, hogy $A$ a szóban forgó halmaznak a legkisebb felső korlátja, azaz
 #list($forall n in NN : a_n lt.eq A "és"$,
 $forall epsilon gt 0"-hoz" exists n_0 in NN : A - epsilon lt a_"n0" lt.eq A.$)
@@ -445,7 +445,7 @@ $ forall n gt n_0 : a_n gt.eq a_"n0" gt P, $
 == Az $a_n colon.eq (1 + 1 / n)^n (n in NN^(+))$ sorozat konvergenciája
 
 Az $ a_n colon.eq (1 + 1 / n)^n (n in NN^(+)) $ sorozat szigorúan monoton növekvő ls felülről korlátos, tehát konvergens. Legyen
-$ e := limits(lim)_(n arrow.r +infinity)(1+1/n)^n. $
+$ e colon.eq limits(lim)_(n arrow.r +infinity)(1+1/n)^n. $
 
 === Bizonyítás
 Az állítást a számtani és a mértani közép közötti egyenlőtlenség „ötletes”
@@ -474,9 +474,9 @@ Legyen $A > 0$ valós szám és $m ≥ 2$ természetes szám. Ekkor az
 #set math.cases(reverse: false)
 $ cases(
   a_0 gt 0 "tetszőleges valós szám,",
-  a_(n+1) := 1/m (A/a_n^(m-1) + (m-1)a_n) space (n in NN)
+  a_(n+1) colon.eq 1/m (A/a_n^(m-1) + (m-1)a_n) space (n in NN)
 ) $
-rekurzióval értelmezett $(a_n)$ sorozat konvergens, és az $alpha := lim(a_n)$ határértékére igaz,
+rekurzióval értelmezett $(a_n)$ sorozat konvergens, és az $alpha colon.eq lim(a_n)$ határértékére igaz,
 hogy $alpha gt 0$ és
 
 $ alpha^m = A. $
@@ -501,7 +501,7 @@ A jobb oldali egyenlőtlenség igazolására a számtani és a mértani közép 
 és az egyenlőség akkor és csak akkor áll fenn, ha $x_1 = x_2 = · · · = x_m$. Fontos
 hangsúlyozni, hogy lényegében ezt az alakot igazoltuk gyakorlaton, és csak az medik gyök egyértelmű létezése után írhatjuk fel az egyenlőtlenséget a megszokott alakban.\
 Vegyük észre, hogy a rekurzív képlet jobb oldalán álló összeg az m darab
-$ x_1 := A/(a_n^(m-1)), x_2 = a_n, x_3=a_n, ... ,x_m = a_n space (n in NN) $
+$ x_1 colon.eq A/(a_n^(m-1)), x_2 = a_n, x_3=a_n, ... ,x_m = a_n space (n in NN) $
 pozitív szám számtani közepe. Ezért ($triangle$) miatt
 $ a_(n+1)^m eq (1/m dot.op (A/a_n^(m-1) + a_n + ... + a_n))^m eq ((x_1 + x_2 + ... + x_m)/m)^m gt.eq\ x_1 dot.op x_2 dot.op ... dot.op x_m eq A/(a_n^(m-1)) dot.op a_n dot.op a_n dot.op ... dot.op a_n eq A space (n in NN) $
 
@@ -512,7 +512,7 @@ ezért a monoton sorozatok határértékére vonatkozó tétel alapján $(a_n)$ 
 
 ==== 3.Lépés
 Kiszámítjuk a sorozat határértékét. Legyen
-$ alpha := lim(a_n) $
+$ alpha colon.eq lim(a_n) $
 Az eddigiekből az következik, hogy $alpha gt.eq 0$. Fontos észrevétel azonban az, hogy az
 $alpha gt 0$ egyenlőtlenség is igaz. Ez az állítás a konvergens sorozatok és a műveletek
 kapcsolatára vonatkozó tételből, valamint a határérték és a rendezés kapcsolatára
@@ -541,7 +541,7 @@ $ (a_n) "konvergens" arrow.l.r.double.long (a_n) "Cauchy-sorozat" $
 
 === Bizonyítás
 
-$arrow.double$ Tegyük fel, hogy $(a_n)$ konvergens, és $A := lim(a_n)$ a határértéke. Legyen $epsilon gt 0$ tetszőleges valós szám. A konvergencia definíciója szerint
+$arrow.double$ Tegyük fel, hogy $(a_n)$ konvergens, és $A colon.eq lim(a_n)$ a határértéke. Legyen $epsilon gt 0$ tetszőleges valós szám. A konvergencia definíciója szerint
 $ exists n_0 in NN, forall n gt n_0 : abs(a_n - A) lt epsilon/2 $
 Így $forall m,n gt n_0$ index esetén
 $ abs(a_n - a_m) eq abs((a_n -A) + (A - a_m)) lt.eq abs(a_n - A) + abs(a_m - A) lt epsilon/2 + epsilon/2 = epsilon $
@@ -564,7 +564,7 @@ egyenlőtlenség már minden $n in NN$ számra igaz, azaz a sorozat valóban kor
 ==== 2.Lépés
 A Bolzano-Weierstrass-féle kiválasztási tételből következik, hogy $(a_n)$-nek
 létezik egy $(a_v_n)$ konvergens részsorozata. Jelölje
-$ A := lim(a_v_n) in RR $
+$ A colon.eq lim(a_v_n) in RR $
 
 ==== 3.Lépés
 Belátjuk, hogy $lim(a_n) = A$ is igaz\
@@ -575,7 +575,7 @@ $ exists n_3 in NN, forall n,m gt n_3 : abs(a_n - a_m) lt epsilon/2 $
 Mivel $(v_n) : NN arrow NN$ indexsorozat (vagyis $(v_n)$ szigorúan monoton növekvő), ezért
 $v_n gt.eq n (n in NN)$, amit teljes indukcióval lehet igazolni.\
 \
-Ha $n gt n_0 := max{n_2, n_3}$, akkor $v_n gt n_0$, ezért $n$ és $m := v_n$ is nagyobb, mint $n_2 "és" n_3$, tehát alkalmazhatók a fenti egyenlőtlenségek. Ekkor
+Ha $n gt n_0 colon.eq max{n_2, n_3}$, akkor $v_n gt n_0$, ezért $n$ és $m colon.eq v_n$ is nagyobb, mint $n_2 "és" n_3$, tehát alkalmazhatók a fenti egyenlőtlenségek. Ekkor
 $ abs(a_n - A) eq abs((a_n - a_v_n) + (a_v_n - A)) lt.eq abs(a_n - a_m) + abs(a_v_n - A) lt epsilon/2 + epsilon/2 eq epsilon $
 és ez azt jelenti, hogy az $(a_n)$ sorozat valóban konvergens, és $lim(a_n) eq A$
 
