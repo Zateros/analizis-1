@@ -249,7 +249,7 @@ Ekkor a $(b_n)$ sorozatnak is van határértéke és $lim(b_n) eq A$
 
 === Bizonyítás
 Három eset lehetséges:\
-*1. eset:* $A in RR$ Legyen epsilon gt 0  tetszőleges valós szám. $lim(a_n) = lim(c_n) = A$ azt jelenti, hogy $(a_n) "és" (c_n)$ azonos A határértékkel rendelkező konvergens sorozatok. A konvergencia definíciója szerint tehát
+*1. eset:* $A in RR$ Legyen $epsilon gt 0$  tetszőleges valós szám. $lim(a_n) = lim(c_n) = A$ azt jelenti, hogy $(a_n) "és" (c_n)$ azonos A határértékkel rendelkező konvergens sorozatok. A konvergencia definíciója szerint tehát
 
 $ exists n_1 in NN, forall n gt n_1 : A - epsilon lt a_n lt A + epsilon $
 $ exists n_2 in NN, forall n gt n_2 : A - epsilon lt c_n lt A + epsilon $
