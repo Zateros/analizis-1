@@ -306,7 +306,7 @@ Mivel $lim(a_n) = A "és" lim(b_n) = B$ , így a definíció értelmében
 
 $ exists n_1 in NN, forall n > n_1 : a_n in K_"r1" (A) $
 $ exists n_2 in NN, forall n > n_2 : b_n in K_"r2" (B) $
-Legyen $N colon.eq max{n_1,n_2}.$ Ekkor $forall n lt N$ esetén
+Legyen $N colon.eq max{n_1,n_2}.$ Ekkor $forall n gt N$ esetén
 $ a_n in K_"r1" (A) "és" b_n in K_"r2" (B) arrow.r.long.double a_n lt b_n $
 
 *2.* Indirekt módon bizonyítjuk. Tegyük fel, hogy $A > B$. Ekkor a már igazolt 1. állítás szerint $exists N ∈ NN$, hogy minden $n gt N$ indexre $b_n lt a_n$, ami ellentmond a feltételnek.
