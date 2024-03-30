@@ -299,7 +299,7 @@ Ekkor:
 
 *1.* Azt már tudjuk, hogy bármely két különböző $macron(RR)$-beli elem szétválasztható diszjunkt környezetekkel:
 
-$ forall A,B in macron(RR), A != B"-hez" exists r_1,r_2 lt 0, K_"r1" (A) sect K_"r2" (B) = emptyset dot $
+$ forall A,B in macron(RR), A != B"-hez" exists r_1,r_2 gt 0, K_"r1" (A) sect K_"r2" (B) = emptyset dot $
 
 Világos, hogy ha $A < B$, akkor $forall x in K_"r1" (A), forall y in K_"r2" (B): x lt y$
 Mivel $lim(a_n) = A "és" lim(b_n) = B$ , így a definíció értelmében
