@@ -434,7 +434,7 @@ becslés is igaz minden $n gt n_0$ indexre. Azt kaptuk tehát, hogy
 $ forall epsilon gt 0"-hoz" exists n_0 in NN, forall n gt n_0 : abs(a_n -A) lt epsilon. $
 Ez pontosan azt jelenti, hogy az $(a_n)$ sorozat konvergens, és $lim(a_n) = A$.\
 \
-2. Tegyük fel, hogy az $(a_n)$ sorozat monoton növekvőls felülről nem korlátos. Ekkor
+2. Tegyük fel, hogy az $(a_n)$ sorozat monoton növekvő és felülről nem korlátos. Ekkor
 $ forall P > 0"-hoz" exists n_0 in NN : a_"n0" gt P. $
 A monotonitás miat ezért egyúttal az is igaz, hogy
 $ forall n gt n_0 : a_n gt.eq a_"n0" gt P, $
